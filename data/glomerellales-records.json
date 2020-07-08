@@ -1,0 +1,642 @@
+﻿[
+  {
+    "n": {
+      "identity": 417,
+      "labels": [
+        "Taxon",
+        "order"
+      ],
+      "properties": {
+        "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+        "scientificName": "Glomerellales",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "order",
+        "isExtinct": false,
+        "taxonID": 3931178,
+        "parentNameUsageID": 3925858,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "datasetID": "Species 2000",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 418,
+      "labels": [
+        "Taxon",
+        "family"
+      ],
+      "properties": {
+        "identifier": "398127464296d464ee3cabdf6b5b8987",
+        "scientificName": "Plectosphaerellaceae",
+        "taxonRank": "family",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "isExtinct": false,
+        "taxonID": 3931179,
+        "parentNameUsageID": 3931178,
+        "phylum": "Ascomycota",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 419,
+      "labels": [
+        "Taxon",
+        "family"
+      ],
+      "properties": {
+        "identifier": "4362d643602ccba0675e679ec91b0534",
+        "scientificName": "Glomerellaceae",
+        "taxonRank": "family",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "parentNameUsageID": 3931178,
+        "isExtinct": false,
+        "taxonID": 3931180,
+        "phylum": "Ascomycota",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 420,
+      "labels": [
+        "Taxon",
+        "family"
+      ],
+      "properties": {
+        "scientificName": "Not assigned",
+        "taxonRank": "family",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "parentNameUsageID": 3931178,
+        "isExtinct": false,
+        "taxonID": 3938858,
+        "phylum": "Ascomycota",
+        "datasetID": "Species 2000",
+        "family": "Not assigned",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 421,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "f1f10301df175b031f2fb86d2797ae4f",
+        "genericName": "Acremoniisimulans",
+        "scientificName": "Acremoniisimulans",
+        "taxonRank": "genus",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "taxonID": 3942792,
+        "parentNameUsageID": 3931179,
+        "isExtinct": false,
+        "phylum": "Ascomycota",
+        "genus": "Acremoniisimulans",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 422,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "2f5bb2fb8255335b7bc346f17f444c16",
+        "genericName": "Blennorella",
+        "scientificName": "Blennorella",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 3971789,
+        "parentNameUsageID": 3931180,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Blennorella",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 423,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "5f5e1d773775b38e7e91dd01d79a38d3",
+        "genericName": "Brunneochlamydosporium",
+        "scientificName": "Brunneochlamydosporium",
+        "taxonRank": "genus",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "taxonID": 3975557,
+        "parentNameUsageID": 3931179,
+        "isExtinct": false,
+        "phylum": "Ascomycota",
+        "genus": "Brunneochlamydosporium",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 424,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "4ae8bd1c5e2bd0f3595d04a464212926",
+        "genericName": "Brunneomyces",
+        "scientificName": "Brunneomyces",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 3975564,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Brunneomyces",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 425,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "6f523b8416fe5af70d1c471f7d04cd35",
+        "genericName": "Chlamydosporiella",
+        "scientificName": "Chlamydosporiella",
+        "taxonRank": "genus",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "taxonID": 3989148,
+        "parentNameUsageID": 3931179,
+        "isExtinct": false,
+        "phylum": "Ascomycota",
+        "genus": "Chlamydosporiella",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 426,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "4808d5b65cd847e167c83d04ee406d99",
+        "genericName": "Chordomyces",
+        "scientificName": "Chordomyces",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 3989862,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Chordomyces",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 427,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "9f6adc09c52a5eb1b9aabd89ccbfe3f7",
+        "genericName": "Colletostroma",
+        "scientificName": "Colletostroma",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 3994921,
+        "parentNameUsageID": 3931180,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Colletostroma",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 428,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "0b7da7ec0ba2db44e9940fe93a02c306",
+        "genericName": "Colletotrichopsis",
+        "scientificName": "Colletotrichopsis",
+        "taxonRank": "genus",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "taxonID": 3994923,
+        "parentNameUsageID": 3931180,
+        "isExtinct": false,
+        "phylum": "Ascomycota",
+        "genus": "Colletotrichopsis",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 429,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "4730832b473103ced1cf0ecd0e2ee243",
+        "genericName": "Colletotrichum",
+        "scientificName": "Colletotrichum",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 3994928,
+        "parentNameUsageID": 3931180,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Colletotrichum",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 430,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "c19a3b93e825844be9ff69a7215b608d",
+        "genericName": "Ellisiellina",
+        "scientificName": "Ellisiellina",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4019422,
+        "parentNameUsageID": 3931180,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Ellisiellina",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 431,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "ad731d7f5457de807d617bceb19b645d",
+        "genericName": "Furcasterigmium",
+        "scientificName": "Furcasterigmium",
+        "taxonRank": "genus",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "kingdom": "Fungi",
+        "taxonID": 4032721,
+        "parentNameUsageID": 3931179,
+        "isExtinct": false,
+        "phylum": "Ascomycota",
+        "genus": "Furcasterigmium",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 432,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "69cf7b9912c4dd6e10d5aa0cba2fd1c6",
+        "genericName": "Fuscohypha",
+        "scientificName": "Fuscohypha",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4032854,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Fuscohypha",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 433,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "00edab1c8defedaeca27a7a2212f4505",
+        "genericName": "Gibellulopsis",
+        "scientificName": "Gibellulopsis",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4035695,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Gibellulopsis",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 434,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "0ca045f18f72b0cfca1ebca4f5af79b2",
+        "genericName": "Glomerella",
+        "scientificName": "Glomerella",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4036736,
+        "parentNameUsageID": 3931180,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Glomerella",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 435,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "a69676ec7652813a50cb02b9026ee7ae",
+        "genericName": "Haplothecium",
+        "scientificName": "Haplothecium",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4043150,
+        "parentNameUsageID": 3931180,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Haplothecium",
+        "datasetID": "Species 2000",
+        "family": "Glomerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 436,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "e86a9dbb38fb22be658d5365dcc888aa",
+        "genericName": "Lectera",
+        "scientificName": "Lectera",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4066363,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Lectera",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 437,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "bb37f41b55b61d5086ee3a1ae2cba524",
+        "genericName": "Longitudinalis",
+        "scientificName": "Longitudinalis",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4073540,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Longitudinalis",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 438,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "832a51d1959fcd2e40db8be542fb1739",
+        "genericName": "Malaysiasca",
+        "scientificName": "Malaysiasca",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4077978,
+        "parentNameUsageID": 3938858,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Malaysiasca",
+        "datasetID": "Species 2000",
+        "family": "Not assigned",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 439,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "908a16c76ce23852062ce40bbf110518",
+        "genericName": "Musicillium",
+        "scientificName": "Musicillium",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4092588,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Musicillium",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 440,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "e42db2881fcdc1a0b082890af47eb5db",
+        "genericName": "Musidium",
+        "scientificName": "Musidium",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4092592,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Musidium",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  },
+  {
+    "n": {
+      "identity": 441,
+      "labels": [
+        "Taxon",
+        "genus"
+      ],
+      "properties": {
+        "identifier": "0de6c8f6fd3e846a4afc810b4c5383f6",
+        "genericName": "Nigrocephalum",
+        "scientificName": "Nigrocephalum",
+        "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+        "taxonRank": "genus",
+        "isExtinct": false,
+        "taxonID": 4100943,
+        "parentNameUsageID": 3931179,
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "genus": "Nigrocephalum",
+        "datasetID": "Species 2000",
+        "family": "Plectosphaerellaceae",
+        "class": "Sordariomycetes",
+        "order": "Glomerellales"
+      }
+    }
+  }
+]

@@ -1,0 +1,294 @@
+﻿[
+  {
+    "p": {
+      "start": {
+        "identity": 156,
+        "labels": [
+          "order"
+        ],
+        "properties": {
+          "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+          "scientificName": "Glomerellales",
+          "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+          "taxonRank": "order",
+          "isExtinct": false,
+          "taxonID": 3931178,
+          "parentNameUsageID": 3925858,
+          "kingdom": "Fungi",
+          "phylum": "Ascomycota",
+          "datasetID": "Species 2000",
+          "class": "Sordariomycetes",
+          "order": "Glomerellales"
+        }
+      },
+      "end": {
+        "identity": 157,
+        "labels": [
+          "family"
+        ],
+        "properties": {
+          "identifier": "398127464296d464ee3cabdf6b5b8987",
+          "scientificName": "Plectosphaerellaceae",
+          "taxonRank": "family",
+          "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+          "kingdom": "Fungi",
+          "isExtinct": false,
+          "taxonID": 3931179,
+          "parentNameUsageID": 3931178,
+          "phylum": "Ascomycota",
+          "datasetID": "Species 2000",
+          "family": "Plectosphaerellaceae",
+          "class": "Sordariomycetes",
+          "order": "Glomerellales"
+        }
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 156,
+            "labels": [
+              "order"
+            ],
+            "properties": {
+              "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+              "scientificName": "Glomerellales",
+              "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+              "taxonRank": "order",
+              "isExtinct": false,
+              "taxonID": 3931178,
+              "parentNameUsageID": 3925858,
+              "kingdom": "Fungi",
+              "phylum": "Ascomycota",
+              "datasetID": "Species 2000",
+              "class": "Sordariomycetes",
+              "order": "Glomerellales"
+            }
+          },
+          "relationship": {
+            "identity": 167,
+            "start": 157,
+            "end": 156,
+            "type": "PARENT",
+            "properties": {}
+          },
+          "end": {
+            "identity": 157,
+            "labels": [
+              "family"
+            ],
+            "properties": {
+              "identifier": "398127464296d464ee3cabdf6b5b8987",
+              "scientificName": "Plectosphaerellaceae",
+              "taxonRank": "family",
+              "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+              "kingdom": "Fungi",
+              "isExtinct": false,
+              "taxonID": 3931179,
+              "parentNameUsageID": 3931178,
+              "phylum": "Ascomycota",
+              "datasetID": "Species 2000",
+              "family": "Plectosphaerellaceae",
+              "class": "Sordariomycetes",
+              "order": "Glomerellales"
+            }
+          }
+        }
+      ],
+      "length": 1
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 156,
+        "labels": [
+          "order"
+        ],
+        "properties": {
+          "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+          "scientificName": "Glomerellales",
+          "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+          "taxonRank": "order",
+          "isExtinct": false,
+          "taxonID": 3931178,
+          "parentNameUsageID": 3925858,
+          "kingdom": "Fungi",
+          "phylum": "Ascomycota",
+          "datasetID": "Species 2000",
+          "class": "Sordariomycetes",
+          "order": "Glomerellales"
+        }
+      },
+      "end": {
+        "identity": 158,
+        "labels": [
+          "family"
+        ],
+        "properties": {
+          "identifier": "4362d643602ccba0675e679ec91b0534",
+          "scientificName": "Glomerellaceae",
+          "taxonRank": "family",
+          "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+          "kingdom": "Fungi",
+          "parentNameUsageID": 3931178,
+          "isExtinct": false,
+          "taxonID": 3931180,
+          "phylum": "Ascomycota",
+          "datasetID": "Species 2000",
+          "family": "Glomerellaceae",
+          "class": "Sordariomycetes",
+          "order": "Glomerellales"
+        }
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 156,
+            "labels": [
+              "order"
+            ],
+            "properties": {
+              "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+              "scientificName": "Glomerellales",
+              "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+              "taxonRank": "order",
+              "isExtinct": false,
+              "taxonID": 3931178,
+              "parentNameUsageID": 3925858,
+              "kingdom": "Fungi",
+              "phylum": "Ascomycota",
+              "datasetID": "Species 2000",
+              "class": "Sordariomycetes",
+              "order": "Glomerellales"
+            }
+          },
+          "relationship": {
+            "identity": 168,
+            "start": 158,
+            "end": 156,
+            "type": "PARENT",
+            "properties": {}
+          },
+          "end": {
+            "identity": 158,
+            "labels": [
+              "family"
+            ],
+            "properties": {
+              "identifier": "4362d643602ccba0675e679ec91b0534",
+              "scientificName": "Glomerellaceae",
+              "taxonRank": "family",
+              "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+              "kingdom": "Fungi",
+              "parentNameUsageID": 3931178,
+              "isExtinct": false,
+              "taxonID": 3931180,
+              "phylum": "Ascomycota",
+              "datasetID": "Species 2000",
+              "family": "Glomerellaceae",
+              "class": "Sordariomycetes",
+              "order": "Glomerellales"
+            }
+          }
+        }
+      ],
+      "length": 1
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 156,
+        "labels": [
+          "order"
+        ],
+        "properties": {
+          "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+          "scientificName": "Glomerellales",
+          "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+          "taxonRank": "order",
+          "isExtinct": false,
+          "taxonID": 3931178,
+          "parentNameUsageID": 3925858,
+          "kingdom": "Fungi",
+          "phylum": "Ascomycota",
+          "datasetID": "Species 2000",
+          "class": "Sordariomycetes",
+          "order": "Glomerellales"
+        }
+      },
+      "end": {
+        "identity": 167,
+        "labels": [
+          "family"
+        ],
+        "properties": {
+          "scientificName": "Not assigned",
+          "taxonRank": "family",
+          "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+          "kingdom": "Fungi",
+          "parentNameUsageID": 3931178,
+          "isExtinct": false,
+          "taxonID": 3938858,
+          "phylum": "Ascomycota",
+          "datasetID": "Species 2000",
+          "family": "Not assigned",
+          "class": "Sordariomycetes",
+          "order": "Glomerellales"
+        }
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 156,
+            "labels": [
+              "order"
+            ],
+            "properties": {
+              "identifier": "9777ba1cbb44116259aef93c5dd03b5a",
+              "scientificName": "Glomerellales",
+              "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+              "taxonRank": "order",
+              "isExtinct": false,
+              "taxonID": 3931178,
+              "parentNameUsageID": 3925858,
+              "kingdom": "Fungi",
+              "phylum": "Ascomycota",
+              "datasetID": "Species 2000",
+              "class": "Sordariomycetes",
+              "order": "Glomerellales"
+            }
+          },
+          "relationship": {
+            "identity": 177,
+            "start": 167,
+            "end": 156,
+            "type": "PARENT",
+            "properties": {}
+          },
+          "end": {
+            "identity": 167,
+            "labels": [
+              "family"
+            ],
+            "properties": {
+              "scientificName": "Not assigned",
+              "taxonRank": "family",
+              "datasetName": "Catalogue of Life in Species 2000 & ITIS Catalogue of Life: 2020-04-16 Beta",
+              "kingdom": "Fungi",
+              "parentNameUsageID": 3931178,
+              "isExtinct": false,
+              "taxonID": 3938858,
+              "phylum": "Ascomycota",
+              "datasetID": "Species 2000",
+              "family": "Not assigned",
+              "class": "Sordariomycetes",
+              "order": "Glomerellales"
+            }
+          }
+        }
+      ],
+      "length": 1
+    }
+  }
+]

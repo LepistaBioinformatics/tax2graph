@@ -1,0 +1,1 @@
+﻿taxonID	locationID	locality	occurrenceStatus	establishmentMeans

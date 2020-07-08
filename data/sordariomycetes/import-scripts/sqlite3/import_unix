@@ -1,0 +1,50 @@
+#! /bin/bash
+
+#################################################################
+##  Author: Dennis Seijts                                      ##
+##  Copyright: ETI BioInformatics                              ##
+##  Developed in: i4Life project Work Package 4                ##
+##  Version 1.0, 2012                                          ##
+#################################################################
+
+read -p "Enter the name of the database: " dbName
+read -p "Enter a prefix for table names, leave empty if you don't want a prefix: " tblPrefix
+read -p "Enter the basepath to the import files, leave empty for [$PWD]: " importPath
+  if [[ $importPath == "" ]]; then
+    importPath=$PWD;
+  fi
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# importScript=`cat "${DIR}/sqlite3.sql"`
+
+# get the basepath
+# basepath=$PWD
+
+# Allows changes such as Prefixes for tables in the script.
+# importScript=$(echo $importScript | sed -e "s#@BASEPATH@#${basepath}#g")
+# importScript=$(echo $importScript | sed -e "s/@TABLEPREFIX@/${tblPrefix}/g")
+# echo $importScript
+# importScript="create table n (id INTEGER PRIMARY KEY,f TEXT,l TEXT);insert into n (f,l) values ('john','smith');"
+
+sed -e "s/@TABLEPREFIX@/${tblPrefix}/g" "${DIR}/sqlite3.sql" > /tmp/sqlite3.sql
+
+echo
+echo Creating temporary files:
+ echo ".read /tmp/create.sql" > /tmp/sqlite3init.cat
+ echo ".mode tabs" >> /tmp/sqlite3init.cat
+ echo ".import \"${importPath}/distribution.txt\" ${tblPrefix}Distribution" >> /tmp/sqlite3init.cat
+ echo ".import \"${importPath}/description.txt\" ${tblPrefix}Description" >> /tmp/sqlite3init.cat
+ echo ".import \"${importPath}/reference.txt\" ${tblPrefix}Reference" >> /tmp/sqlite3init.cat
+ echo ".import \"${importPath}/taxa.txt\" ${tblPrefix}Taxon" >> /tmp/sqlite3init.cat
+ echo ".import \"${importPath}/vernacular.txt\" ${tblPrefix}VernacularName" >> /tmp/sqlite3init.cat
+
+echo
+echo Creating database structure and importing the data:
+cat /tmp/sqlite3init.cat | sqlite3 $dbName
+
+echo
+echo Removing temporary files:
+rm /tmp/sqlite3init.cat
+rm /tmp/sqlite3.sql
+
+echo
+echo Import completed.

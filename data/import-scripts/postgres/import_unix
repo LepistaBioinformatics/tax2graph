@@ -1,0 +1,152 @@
+#! /bin/bash
+
+#################################################################
+##  Author: Ayco Holleman                                      ##
+##  Copyright: ETI BioInformatics                              ##
+##  Developed in: i4Life project Work Package 4                ##
+##  Version 1.0, 2012                                          ##
+#################################################################
+
+
+function usage {
+	echo "USAGE:"
+	echo "${0} -u user -d database [-h host] [-p password] [-x prefix] [-e exportdir] [-n]"
+	echo "OR:"
+	echo "${0} -user user -database database [-host host] [-password password] [-prefix prefix] [-exportdir exportdir] [-nocreate]"
+}
+
+
+# Directory containing this script
+dir=$(pwd)
+
+# DB params
+host="localhost"
+user=""
+password=""
+database=""
+
+# Table prefix
+prefix=""
+
+# DCA export dir
+exportdir=$(pwd)
+
+# Whether or not to (re-) create the tables using create.sql
+nocreate=0
+
+while [ $# -gt 0 ]
+do
+    case "$1" in
+	    -h|-host)
+	    	host="$2"; shift;;
+	    -u|-user)
+	    	user="$2"; shift;;
+	    -p|-password)
+	    	password="$2"; shift;;
+	    -d|-database)
+	    	database="$2"; shift;;
+	    -x|-prefix)
+	    	prefix="$2"; shift;;
+	    -e|-exportdir)
+	    	exportdir="$2"; shift;;
+	    -n|-nocreate)
+	    	nocreate=1; shift;;
+		*) usage; exit 1;;
+    esac
+    shift
+done
+
+
+
+############################################
+# check env
+############################################
+
+if [ ! -f "${dir}/import.sql" ]
+then
+	echo "You must call the ${0} script from within the directory that contains it"
+	exit 1;
+fi
+
+psql=$(which psql)
+if [ "${psql}" = "" ]
+then
+	echo "Missing psql command line client"
+	exit 1
+fi
+
+
+
+
+############################################
+# check user input
+############################################
+
+if [ ! "${user}" -o ! "${database}" ]
+then
+  usage
+  echo "No database and/or user specified"
+  exit 1
+fi
+
+if [ ! -d "$exportdir" ]
+then
+	echo "No such directory: \"$exportdir\""
+	exit 1;
+fi
+
+if [ ! -f "$exportdir/taxa.txt" ]
+then
+	echo "Directory does not seem to be a DCA export directory: \"$exportdir\""
+	exit 1;
+fi
+
+# Make sure path to DCA export dir ends with a forward slash
+lastchar=${exportdir#${exportdir%?}}
+if [ $lastchar != '/' ]
+then
+	exportdir="${exportdir}/"
+fi
+
+# Replace '/' with '\/' in path of DCA export dir,
+# otherwise sed command will choke
+exportdir=$(echo $exportdir | sed 's/\//\\\//g')
+
+
+# Make sure we can connect to PostgreSQL
+psql="$psql -q --host $host --username $user --dbname $database"
+if [ "$password" != "" ]
+then
+	psql="$psql --password $password"
+fi
+test=$(echo '\q' | ${psql} 2>&1)
+if [ "$test" != "" ]
+then
+  echo "Cannot connect to PostgreSQL using the specified connection parameters"
+  exit 1
+fi
+
+
+
+
+############################################
+# Create tables, when requested
+############################################
+if [ ${nocreate} = 0 ] 
+then
+	sed -e "s/@TABLEPREFIX@/${prefix}/g" "${dir}/create.sql" > /tmp/_dca_export_postgres_create.sql
+	cat /tmp/_dca_export_postgres_create.sql | ${psql}
+fi
+
+
+
+############################################
+# Import data
+############################################
+sed -e "s/@TABLEPREFIX@/${prefix}/g" "${dir}/import.sql" > /tmp/_dca_export_postgres_import_0.sql
+sed -e "s/@BASEPATH@/${exportdir}/g" "/tmp/_dca_export_postgres_import_0.sql" > /tmp/_dca_export_postgres_import_1.sql
+cat /tmp/_dca_export_postgres_import_1.sql | ${psql}
+
+echo "Import complete"
+exit 0
+

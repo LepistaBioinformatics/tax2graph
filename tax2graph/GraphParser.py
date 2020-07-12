@@ -162,7 +162,7 @@ class GraphParser:
         return query.evaluate()
     
 
-    def set_custom_node(self, term: CustomNodeType, parent_name: str) -> None:
+    def set_custom_node(self, custom_node: CustomNodeType, parent_name: str) -> None:
         """
         Set a custom node. Require a parent node to create a relationship with.
         """
@@ -175,32 +175,9 @@ class GraphParser:
         graph = self.__validate_and_connect()
         tx = graph.begin()
 
-        node = Node(term['taxonRank'], **term)
+        node = Node(custom_node['taxonRank'], **custom_node)
         node.add_label('Custom')
         tx.create(node)
         relationship = self.PARENT(node, parent_node)
         tx.merge(relationship)        
         tx.commit()
-
-
-if __name__ == '__main__':
-
-
-    path = 'data/sordariomycetes/taxa.txt'
-    
-
-    connection_variables: ConnectionType = {
-        "password": str(os.getenv('NEO_PASSWORD'))
-    }
-
-    parser = GraphParser(connection_variables)
-
-    #parser.build_col_graph()
-    print(parser.get_node('Glomerellales'))
-    print(parser.get_parent('Glomerellales'))
-
-    """ custom_node: CustomNodeType = {
-        'taxonRank': 'species',
-        'description': 'A custom clade 4'
-    }
-    parser.set_custom_node(custom_node, 'Colletotrichum') """

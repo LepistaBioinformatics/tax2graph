@@ -1,3 +1,7 @@
-.pypirc
-.mypy_cache/
 .history/
+.mypy_cache/
+.pypirc
+.vscode/
+build/
+dist/
+tax2graph.egg-info/

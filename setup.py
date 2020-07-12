@@ -34,7 +34,7 @@ setup_args = dict(
     keywords=['i4Life', 'Neo4J', 'Taxonomy'],
     url = 'https://github.com/sgelias/tax2graph.git',
     packages = find_packages(),
-    package_dir={'tax2graph': 'src/tax2graph'},
+    package_dir={'tax2graph': 'tax2graph'},
     package_data={'tax2graph': ['data/sordariomycetes/*.txt']},
     include_package_data = True,
 

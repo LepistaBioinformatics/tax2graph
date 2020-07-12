@@ -6,18 +6,11 @@ A simple way to convert i4Life tabled taxonomy to Neo4J graph representation.
 ## Example data
 
 A example data are available on data folder. It contains the Sordariomycetes taxonomy downloaded from "i4Life WP4 Download Service of the Catalogue of Life:
-Darwin Core Archive Export".
+Darwin Core Archive Export" (see http://www.catalogueoflife.org/DCA_Export/).
 
 ## Usage
 
-As example set the path to taxa.txt file available in sordariomycetes filder. To this run:
-```python
-
-path = 'tax2graph/data/sordariomycetes/taxa.txt'
-
-```
-
-Now, initialize a connection dict containing at last the password to perform queries to Neo4J database:
+Initialize a connection dict containing at last the password key to perform queries to Neo4J database:
 
 ```python
 
@@ -32,13 +25,18 @@ parser = GraphParser(connection_variables)
 ```
 
 And build the graph from Sordariomycetes:
+
+
 ```python
+
+parser.read('tax2graph/data/sordariomycetes/taxa.txt')
 
 parser.build_col_graph()
 
 ```
 
 To perform simple queries use:
+
 ```python
 
 parser.get_node('Glomerellales')
@@ -50,6 +48,7 @@ parser.get_parent('Glomerellales')
 The former code get the Glomerellales node, and the further get the first parent node (Sordariomycetes).
 
 To create custom nodes simple run:
+
 ```python
 
 from tax2graph import CustomNodeType

@@ -1,4 +1,7 @@
 # tax2graph
+
+![Glomerellales graph](https://github.com/sgelias/tax2graph/blob/master/tax2graph/data/glomerellales-graph.png)
+
 ## Goal
 
 A simple way to convert i4Life tabled taxonomy to Neo4J graph representation.

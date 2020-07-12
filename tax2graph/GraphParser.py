@@ -20,29 +20,61 @@ class CustomNodeType(TypedDict):
 class GraphParser:
 
 
-    class PARENT(Relationship): pass
+    class PARENT(Relationship):
+        """
+        Define a custom class for PARENT relationship's.
+        """
+        pass
 
-
-    def __init__(self, file_path):
-
-        if not os.path.exists(file_path):
-            raise OSError('Invalid file path! Please verify.')
-        
-        self.__read(file_path)
     
+    """
+    The user can override this variable to define connections neo4j databases.
+    """
+    connection_variables = {
+        "auth": None,
+        "host": None,
+        "password": None,
+        "port": None,
+        "scheme": None,
+        "secure": None,
+        "user": None,
+        "user_agent": None,
+        "max_connections": None,
+    }
 
-    def __connect(self):
+
+    def __init__(self, connection_variables: Dict):
+        """
+        Initialization requires at lats that the password key would be defined.
+        it allows to connnect to localhost. For connections woth non-local
+        hosts, aditional keypairs would be defined.
+        """
+        
+        if not connection_variables['password']:
+            raise OSError('Define at last password to start the class.')
+
+        self.connection_variables = connection_variables
+
+
+    def __validate_and_connect(self) -> Graph:
         """
         Connect to local database.
         """
+
+        connection_variables = {
+            k: v for k, v in self.connection_variables.items() if v is not None
+        }
         
-        return Graph(password=os.getenv('NEO_PASSWORD'))
+        return Graph(**connection_variables)
 
 
-    def __read(self, file_path):
+    def read(self, file_path: str) -> None:
         """
         Read the tab separated file and return a dict.
         """
+
+        if not os.path.exists(file_path):
+            raise OSError('Invalid file path! Please verify.')
 
         df = pd \
             .read_csv(file_path, sep='\t', header=0) \
@@ -58,11 +90,12 @@ class GraphParser:
                 item['parentNameUsageID'] = int(item['parentNameUsageID'])
     
 
-    def build_col_graph(self):
+    def build_col_graph(self) -> None:
         """
         Create all records before create reoationships.
         """
-        graph = self.__connect()
+
+        graph = self.__validate_and_connect()
         tx = graph.begin()
     
         nodes = {}
@@ -80,7 +113,7 @@ class GraphParser:
         tx.commit()
     
 
-    def get_clear_dict(self):
+    def get_table_as_dict(self) -> Dict:
         """
         Returns a dict containing imported table.
         """
@@ -88,7 +121,7 @@ class GraphParser:
         return self.__clear_dict
     
 
-    def __remove_keys(self, dict_item: Dict[str, Any], keys: List[str]) -> Dict[str, Any]:
+    def __remove_keys(self, dict_item: Dict[str, Any], keys: List[str]) -> Dict:
         """
         Remove keys from dict.
         """
@@ -101,7 +134,7 @@ class GraphParser:
         Serch the parent of a specified node.
         """
 
-        graph = self.__connect()
+        graph = self.__validate_and_connect()
 
         query = graph \
             .run(
@@ -117,7 +150,7 @@ class GraphParser:
         Serch the parent of a specified node.
         """
 
-        graph = self.__connect()
+        graph = self.__validate_and_connect()
 
         query = graph \
             .run("MATCH (t {scientificName:$term})-[r:PARENT]->(p) \
@@ -137,27 +170,34 @@ class GraphParser:
         if not parent:
             raise ValueError('Parent not exits.')
 
-        graph = self.__connect()
+        graph = self.__validate_and_connect()
         tx = graph.begin()
 
         node = Node(term['taxonRank'], **term)
         node.add_label('Custom')
         tx.create(node)
         relationship = self.PARENT(node, parent)
-        tx.merge(relationship)
+        tx.merge(relationship)        
         tx.commit()
 
 
 if __name__ == '__main__':
 
+
     path = 'data/sordariomycetes/taxa.txt'
-    parser = GraphParser(path)
+    
+    connection_variables = {
+        "password": os.getenv('NEO_PASSWORD')
+    }
+
+    parser = GraphParser(connection_variables)
+
     #parser.build_col_graph()
     print(parser.get_node('Glomerellales'))
     print(parser.get_parent('Glomerellales'))
 
     """ custom_node: CustomNodeType = {
         'taxonRank': 'species',
-        'description': 'A custom clade 3'
+        'description': 'A custom clade 4'
     }
     parser.set_custom_node(custom_node, 'Colletotrichum') """

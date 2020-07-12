@@ -14,7 +14,9 @@ except ImportError:
 
 
 REQUIRES = [
-    "neo4j"
+    "py2neo",
+    "numpy",
+    "pandas",
 ]
 
 

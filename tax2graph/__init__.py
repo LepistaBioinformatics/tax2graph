@@ -1,1 +1,1 @@
-from .GraphParser import GraphParser, CustomNodeType
+from .GraphParser import GraphParser, CustomNodeType, ConnectionType

@@ -1,6 +1,6 @@
 import os
 from math import isnan
-from typing import Any, Dict, List, TypedDict
+from typing import Any, Dict, List, Optional, TypedDict, Union
 
 import numpy as np
 import pandas as pd
@@ -9,12 +9,30 @@ from py2neo import Graph, Node, Relationship
 
 
 class CustomNodeType(TypedDict):
-        """
-        Define a type for custom nodes.
-        """
+    """
+    Define a type for custom nodes.
+    """
 
-        taxonRank: str
-        description: str
+    taxonRank: str
+    description: str
+
+
+class ConnectionType(TypedDict, total=False):
+    """
+    Define the initial structure of connectio dict. Observe that only the
+    'password' are not defined, thus it is the unique obligate key to be
+    provided on class initialization.
+    """
+
+    auth: Optional[str]
+    host: Optional[str]
+    password: str
+    port: Optional[int]
+    scheme: Optional[str]
+    secure: Optional[str]
+    user: Optional[str]
+    user_agent: Optional[str]
+    max_connections: Optional[str]
 
 
 class GraphParser:
@@ -27,23 +45,7 @@ class GraphParser:
         pass
 
     
-    """
-    The user can override this variable to define connections neo4j databases.
-    """
-    connection_variables = {
-        "auth": None,
-        "host": None,
-        "password": None,
-        "port": None,
-        "scheme": None,
-        "secure": None,
-        "user": None,
-        "user_agent": None,
-        "max_connections": None,
-    }
-
-
-    def __init__(self, connection_variables: Dict):
+    def __init__(self, connection_variables: ConnectionType):
         """
         Initialization requires at lats that the password key would be defined.
         it allows to connnect to localhost. For connections woth non-local
@@ -80,7 +82,7 @@ class GraphParser:
             .read_csv(file_path, sep='\t', header=0) \
             .replace(np.nan, "None")
         
-        self.__clear_dict = [
+        self.__clear_dict: List[Dict[Any, Any]] = [
             { k: v for k, v in item.items() if v != "None" }
             for item in df.to_dict('records')
         ]
@@ -113,7 +115,7 @@ class GraphParser:
         tx.commit()
     
 
-    def get_table_as_dict(self) -> Dict:
+    def get_table_as_dict(self) -> List[Dict[Any, Any]]:
         """
         Returns a dict containing imported table.
         """
@@ -160,14 +162,14 @@ class GraphParser:
         return query.evaluate()
     
 
-    def set_custom_node(self, term: CustomNodeType, parent: str) -> None:
+    def set_custom_node(self, term: CustomNodeType, parent_name: str) -> None:
         """
         Set a custom node. Require a parent node to create a relationship with.
         """
 
-        parent = self.get_node(parent)
+        parent_node: Dict[Any, Any] = self.get_node(parent_name)
 
-        if not parent:
+        if not parent_node:
             raise ValueError('Parent not exits.')
 
         graph = self.__validate_and_connect()
@@ -176,7 +178,7 @@ class GraphParser:
         node = Node(term['taxonRank'], **term)
         node.add_label('Custom')
         tx.create(node)
-        relationship = self.PARENT(node, parent)
+        relationship = self.PARENT(node, parent_node)
         tx.merge(relationship)        
         tx.commit()
 
@@ -186,8 +188,9 @@ if __name__ == '__main__':
 
     path = 'data/sordariomycetes/taxa.txt'
     
-    connection_variables = {
-        "password": os.getenv('NEO_PASSWORD')
+
+    connection_variables: ConnectionType = {
+        "password": str(os.getenv('NEO_PASSWORD'))
     }
 
     parser = GraphParser(connection_variables)

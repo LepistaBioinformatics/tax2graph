@@ -20,30 +20,37 @@ REQUIRES = [
 ]
 
 
-PACKAGES = [
-    "tax2graph",
-]
+with open("README.md", "r") as readme_file:
+    long_description = readme_file.read()
 
 
-EXTENSIONS = [
-    Extension(
-        "Classeq.KmerCounter._kmer_counter",
-        ["Classeq/KmerCounter/_kmer_counter.cpp"]
-    ),
-]
+setup_args = dict(
 
-
-setup(
+    # About package
     name = 'tax2graph',
     version = '0.0.1',
-    description = 'Parse taxonomy database from I4Life to neo4j database.',
-    url = 'https://github.com/...',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    keywords=['i4Life', 'Neo4J', 'Taxonomy'],
+    url = 'https://github.com/sgelias/tax2graph.git',
+    packages = find_packages(),
+    package_dir={'tax2graph': 'src/tax2graph'},
+    package_data={'tax2graph': ['data/sordariomycetes/*.txt']},
+    include_package_data = True,
+
+    # About author
     author = 'Samuel Galvão Elias',
     author_email = 'sgelias@outlook.com',
-    license = 'MIT',
-    packages = find_packages(),
-    ext_modules = EXTENSIONS,
-    install_requires = REQUIRES,
-    include_package_data = True, # done via MANIFEST.in under setuptools
-    zip_safe = False
+
+    # Language and Licence
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.6',
 )
+
+
+if __name__ == '__main__':
+    setup(**setup_args, install_requires=REQUIRES)

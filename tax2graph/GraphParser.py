@@ -1,6 +1,5 @@
 import os
-from math import isnan
-from typing import Any, Dict, List, Optional, TypedDict, Union
+from typing import Any, Dict, List, Optional, TypedDict
 
 import numpy as np
 import pandas as pd

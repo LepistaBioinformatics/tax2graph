@@ -13,7 +13,7 @@ Darwin Core Archive Export".
 As example set the path to taxa.txt file available in sordariomycetes filder. To this run:
 ```python
 
-path = 'data/sordariomycetes/taxa.txt'
+path = 'tax2graph/data/sordariomycetes/taxa.txt'
 
 ```
 

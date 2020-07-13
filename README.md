@@ -4,7 +4,7 @@
 
 ## Goal
 
-A simple way to convert i4Life tabled taxonomy to Neo4J graph representation.
+`tax2graph` provide a simple way to convert i4Life tabled taxonomy to Neo4J graph representation.
 
 ## Example data
 
@@ -17,40 +17,43 @@ Initialize a connection dict containing at last the password key to perform quer
 
 ```python
 
-from tax2graph import ConnectionType
+from tax2graph import GraphBuilder, ConnectionType
 
 connection_variables: ConnectionType = {
     "password": str(os.getenv('NEO_PASSWORD'))
 }
 
-parser = GraphParser(connection_variables)
+builder = GraphBuilder(connection_variables)
 
 ```
 
-And build the graph from Sordariomycetes:
-
+And build the graph from Sordariomycetes tab-separated file:
 
 ```python
 
-parser.read('tax2graph/data/sordariomycetes/taxa.txt')
+builder.read('tax2graph/data/sordariomycetes/taxa.txt')
 
-parser.build_col_graph()
+builder.build_col_graph()
 
 ```
 
-To perform simple queries use:
+After load the base taxonomy, the Manager class can be used to perform queries. To perform simple queries use:
 
 ```python
 
-parser.get_node('Glomerellales')
+from tax2graph import Manager
 
-parser.get_parent('Glomerellales')
+manager = Manager(connection_variables)
+
+manager.get_node('Glomerellales')
+
+manager.get_parent('Glomerellales')
 
 ```
 
-The former code get the Glomerellales node, and the further get the first parent node (Sordariomycetes).
+In the above code the constructor of Manager class require the 'connection_variables' to be started, like GraphBuilder class. After started both methods `get_node` and `get_parent` are called. Both receives a simgle parameter as string indicating the name of the Node to search. The former return an dict containing the target (e.g. order Glomerellales) node and the last return the parent node (e.g. class Sordariomycetes).
 
-To create custom nodes simple run:
+The manager class also contain a single method to create custom nodes. To this, simpleously use `set_custom_node`, as example:
 
 ```python
 
@@ -58,10 +61,15 @@ from tax2graph import CustomNodeType
 
 custom_node: CustomNodeType = {
     'taxonRank': 'species',
-    'description': 'A custom clade 4'
+    'description': 'A custom clade'
 }
-parser.set_custom_node(custom_node, 'Colletotrichum')
+
+manager.set_custom_node(custom_node, 'Colletotrichum')
 
 ```
+
+This method receive two parameters: the first is a dict of CustomNodeType type that contains two keys, as `taxonRank` and `description`; and the second is a string indicating the parent node in with the *custom_node* will be connected.
+
+---
 
 Feel free to add new features and contribute through pull requests. Be happy!!

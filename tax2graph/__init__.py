@@ -1,1 +1,3 @@
-from .GraphParser import GraphParser, CustomNodeType, ConnectionType
+from .abstract_connection import ConnectionType
+from .graph_builder import GraphBuilder
+from .manager import CustomNodeType, Manager

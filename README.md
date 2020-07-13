@@ -70,6 +70,21 @@ manager.set_custom_node(custom_node, 'Colletotrichum')
 
 This method receive two parameters: the first is a dict of CustomNodeType type that contains two keys, as `taxonRank` and `description`; and the second is a string indicating the parent node in with the *custom_node* will be connected.
 
+You can also include properties to relationships. To do, simpleously create an instance of CustomRelPropertiesType and include an additional parameter as the third argument of `set_custom_node` method.
+
+```python
+
+from datetime import datetime
+from tax2graph import CustomRelPropertiesType
+
+relationship_properties: CustomRelPropertiesType = {
+    'created': datetime.now()
+}
+
+manager.set_custom_node(custom_node, 'Colletotrichum', relationship_properties)
+
+```
+
 ---
 
 Feel free to add new features and contribute through pull requests. Be happy!!

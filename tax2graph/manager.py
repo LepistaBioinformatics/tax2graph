@@ -1,9 +1,15 @@
-from typing import Any, Dict, TypedDict
+from uuid import UUID
+from datetime import datetime
+from typing import Any, Dict, NewType, Optional, TypedDict
 
-from py2neo import Node
+from py2neo import Node, Graph
 
 from tax2graph.abstract_connection import Connection, ConnectionType
 from tax2graph.graph_builder import PARENT
+
+
+Datetime = NewType('Datetime', datetime)
+Uuid = NewType('Uuid', UUID)
 
 
 class CustomNodeType(TypedDict):
@@ -13,6 +19,26 @@ class CustomNodeType(TypedDict):
 
     taxonRank: str
     description: str
+    node_description_id: Uuid
+
+
+class UserType(TypedDict):
+    """
+    Define the basic type for user.
+    """
+
+    user_id: Uuid
+    name: str
+
+
+class CustomRelPropertiesType(TypedDict, total=False):
+    """
+    Define the basic properties that a custom relationship would include.
+    """
+
+    created: Optional[Datetime]
+    updated: Optional[Datetime]
+    user: Optional[UserType]
 
 
 class Manager(Connection):
@@ -61,12 +87,16 @@ class Manager(Connection):
         return query.evaluate()
 
 
-    def set_custom_node(self, custom_node: CustomNodeType, parent_name: str) -> None:
+    def set_custom_node(self, 
+        custom_node: CustomNodeType, 
+        parent_name: str,
+        relationship_properties: CustomRelPropertiesType = None
+    ) -> Node:
         """
         Set a custom node. Require a parent node to create a relationship with.
         """
 
-        parent_node: Dict[Any, Any] = self.get_node(parent_name)
+        parent_node: Graph = self.get_node(parent_name)
 
         if not parent_node:
             raise ValueError('Parent not exits.')
@@ -75,8 +105,15 @@ class Manager(Connection):
         tx = graph.begin()
 
         node = Node(custom_node['taxonRank'], **custom_node)
-        node.add_label('Custom')
+        node.add_label('custom')
         tx.create(node)
-        relationship = PARENT(node, parent_node)
+        
+        if relationship_properties:
+            relationship = PARENT(node, parent_node, **relationship_properties)
+        else:
+            relationship = PARENT(node, parent_node)
+        
         tx.merge(relationship)        
         tx.commit()
+
+        return node

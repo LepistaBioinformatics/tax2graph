@@ -17,6 +17,7 @@ Initialize a connection dict containing at last the password key to perform quer
 
 ```python
 
+import os
 from tax2graph import GraphBuilder, ConnectionType
 
 connection_variables: ConnectionType = {
@@ -31,11 +32,13 @@ And build the graph from Sordariomycetes tab-separated file:
 
 ```python
 
-builder.read('tax2graph/data/sordariomycetes/taxa.txt')
+builder.read('tax2graph/data/sordariomycetes/taxa.txt', low_memory=False)
 
 builder.build_col_graph()
 
 ```
+
+The second parameter (low_memoty) is optional and is the same of `pandas.read_csv()` (see details in https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html).
 
 After load the base taxonomy, the Manager class can be used to perform queries. To perform simple queries use:
 

@@ -39,7 +39,7 @@ setup_args = dict(
     include_package_data = True,
 
     # About author
-    author = 'Samuel Galvão Elias',
+    author = u"Samuel Galvão Elias".encode("UTF-8"),
     author_email = 'sgelias@outlook.com',
 
     # Language and Licence
@@ -53,4 +53,4 @@ setup_args = dict(
 
 
 if __name__ == '__main__':
-    setup(**setup_args, install_requires=REQUIRES)
+    setup(install_requires=REQUIRES, **setup_args)

@@ -33,7 +33,7 @@ class GraphBuilder(Connection):
         self.connection_variables = connection_variables
 
 
-    def read(self, file_path: str) -> None:
+    def read(self, file_path: str, low_memory: bool = True) -> None:
         """
         Read the tab separated file and return a dict.
         """
@@ -42,7 +42,7 @@ class GraphBuilder(Connection):
             raise OSError('Invalid file path! Please verify.')
 
         df = pd \
-            .read_csv(file_path, sep='\t', header=0) \
+            .read_csv(file_path, sep='\t', header=0, low_memory=low_memory) \
             .replace(np.nan, "None")
         
         self.__clear_dict: List[Dict[Any, Any]] = [

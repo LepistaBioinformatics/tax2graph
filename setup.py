@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 import sys
 import os
 from setuptools import setup, find_packages
@@ -28,7 +31,7 @@ setup_args = dict(
 
     # About package
     name = 'tax2graph',
-    version = '1.0.2',
+    version = '1.0.3',
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords=['i4Life', 'Neo4J', 'Taxonomy'],
@@ -39,7 +42,7 @@ setup_args = dict(
     include_package_data = True,
 
     # About author
-    author = u"Samuel Galvão Elias".encode("UTF-8"),
+    author = "Samuel Galvão Elias",
     author_email = 'sgelias@outlook.com',
 
     # Language and Licence
